@@ -12,7 +12,7 @@ import { CarIcon, Plus, Search } from "lucide-react";
 import { Image } from "@imagekit/next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { Filters } from "./filters";
+import { Filters } from "./filter";
 import { getCars } from "@/lib/actions/cars-action";
 
 type Props = {
