@@ -24,7 +24,7 @@ import {
 } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { addNewCar, generateImage } from "@/lib/actions/cars-action";
+import { addNewCar, generateImage } from "@/lib/actions/cars-actions";
 import NextImage from "next/image";
 import { imagekitAuthenticator } from "@/lib/imagekit";
 import { Progress } from "@/components/ui/progress";
