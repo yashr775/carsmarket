@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ImageKitProvider } from "@imagekit/next";
 import { ThemeProvider } from "next-themes";
+import { Header } from "@/components/layout/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <ThemeProvider attribute={"class"}>
           {" "}
           <ImageKitProvider urlEndpoint="https://ik.imagekit.io/travjm1ce">
+            <Header />
             {children}
           </ImageKitProvider>
         </ThemeProvider>
