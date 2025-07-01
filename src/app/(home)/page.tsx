@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,7 +14,7 @@ import { Image } from "@imagekit/next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Filters } from "./filter";
-import { getCars } from "@/lib/actions/cars-action";
+import { getCars } from "../../lib/actions/cars-actions";
 
 type Props = {
   searchParams: { type: string; page: string };
@@ -25,7 +26,7 @@ export default function Home({ searchParams }: Props) {
       <section className="relative h-[500px] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/cover.avif"
+            src="/cover.jpg"
             alt="Hero car"
             fill
             className="object-cover brightness-50"
@@ -118,7 +119,7 @@ const FeaturedCars = async ({ searchParams }: Props) => {
 
   const cars = await getCars({ page, type });
 
-  return cars.map((car) => (
+  return cars.map((car: any) => (
     <Card key={car.id} className="overflow-hidden">
       <div className="relative h-48">
         <Image
