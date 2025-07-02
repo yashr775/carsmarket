@@ -4,6 +4,7 @@ import "./globals.css";
 import { ImageKitProvider } from "@imagekit/next";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/layout/header";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <ImageKitProvider urlEndpoint="https://ik.imagekit.io/travjm1ce">
             <Header />
             {children}
+            <Toaster richColors closeButton />
           </ImageKitProvider>
         </ThemeProvider>
       </body>
