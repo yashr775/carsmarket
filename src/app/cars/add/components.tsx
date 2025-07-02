@@ -105,7 +105,6 @@ export const GenerateImage = () => {
     }
 
     const { signature, expire, token, publicKey } = authParams;
-    console.log("ImageKit auth params:", authParams);
 
     try {
       const uploadResponse = await upload({
@@ -121,8 +120,6 @@ export const GenerateImage = () => {
         },
         abortSignal: abortController.signal,
       });
-
-      console.log("Upload response:", uploadResponse);
 
       if (!uploadResponse.filePath)
         return toast.error("Failed to upload image");
