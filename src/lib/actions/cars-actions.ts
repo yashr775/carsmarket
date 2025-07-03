@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
 import { auth } from "@/auth";
@@ -61,7 +60,7 @@ export const addNewCar = async (carData: AddCarSchema) => {
 
   if (!user) throw new Error("User not found");
 
-  await prisma.$transaction(async (tx: any) => {
+  await prisma.$transaction(async (tx) => {
     const {
       name,
       brand,
@@ -336,7 +335,7 @@ export const bookmarkCar = async (carId: string) => {
   });
   if (!car) throw new Error("Car not found");
 
-  const isAlreadySaved = car.savedBy.some((item: { id: any; }) => item.id === user.id);
+  const isAlreadySaved = car.savedBy.some((item) => item.id === user.id);
   console.log("Car saved by", isAlreadySaved);
 
   if (isAlreadySaved) {
